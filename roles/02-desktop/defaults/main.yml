@@ -1,0 +1,62 @@
+desktop:
+  packages:
+  # Terminal Emu
+  - foot
+
+  # Launcher
+  - wofi
+
+  # Display Server
+  - wayland
+  - xorg-xwayland
+
+  # Window Manager (Wayland + SwayWM)
+  - sway
+  - swaybg
+  - swayidle
+  - swaylock
+  - waybar
+
+  # Notifications
+  - mako
+
+  # Clipboard
+  - wl-clipboard
+
+  # File management
+  - thunar
+
+  # Appearance
+  - papirus-icon-theme
+
+  # XDG
+  - xdg-utils
+  - xdg-user-dirs
+  - xdg-desktop-portal-wlr
+
+  terminal:
+    packages:
+    # Terminal
+    - bash
+    - htop
+    - btop
+    - iftop
+    - openssh
+    - tree
+
+  font:
+    packages:
+    - ttf-lato
+    - ttf-dejavu
+    - noto-fonts
+    - noto-fonts-emoji
+    - otf-font-awesome
+
+  services:
+  - wpa_supplicant.service
+  - NetworkManager.service
+  - bluetooth.service
+  - power-profiles-daemon.service
+  - systemd-timesyncd.service
+  - systemd-resolved.service
+  - systemd-homed.service

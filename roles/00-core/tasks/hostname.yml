@@ -1,0 +1,7 @@
+---
+- name: set hostname
+  tags: '@00-core/hostname'
+  ansible.builtin.copy:
+    content: "{{ os.hostname }}"
+    dest: /etc/hostname
+    force: true

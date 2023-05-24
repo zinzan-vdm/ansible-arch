@@ -1,0 +1,12 @@
+---
+- name: update cache and upgrade
+  tags: '@04-homedir/packages'
+  community.general.pacman:
+    update_cache: true
+    upgrade: true
+
+- name: install homedir packages
+  tags: '@04-homedir/packages'
+  community.general.pacman:
+    name: "{{ homedir.packages }}"
+    state: present

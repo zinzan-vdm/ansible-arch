@@ -1,0 +1,36 @@
+---
+- name: import core packages
+  tags: '@00-core/packages'
+  ansible.builtin.import_tasks:
+    file: packages.yml
+
+- name: import hostname
+  tags: '@00-core/hostname'
+  ansible.builtin.import_tasks:
+    file: hostname.yml
+
+- name: import hosts
+  tags: '@00-core/hosts'
+  ansible.builtin.import_tasks:
+    file: hosts.yml
+
+- name: import locale
+  tags: '@00-core/locale'
+  ansible.builtin.import_tasks:
+    file: locale.yml
+
+- name: import timezone
+  tags: '@00-core/timezone'
+  ansible.builtin.import_tasks:
+    file: timezone.yml
+
+- name: import kernal
+  tags: '@00-core/kernal'
+  ansible.builtin.import_tasks:
+    file: kernal.yml
+
+- name: import bootloader
+  tags: '@00-core/bootloader'
+  ansible.builtin.import_tasks:
+    file: bootloader.yml
+

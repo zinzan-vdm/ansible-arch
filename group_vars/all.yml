@@ -1,0 +1,26 @@
+---
+os:
+  hostname: zvdm
+  timezone: Africa/Johannesburg
+  locale:
+    keymap: us
+    languages:
+    - en_US.UTF-8 # first one is set as default
+
+boot:
+  storage_device: /dev/sda
+
+kernel:
+  name: linux
+  hooks: base udev block modconf filesystems fsck
+
+user:
+  name: zvdm
+  password: zvdm
+  groups: wheel,realtime # wheel group gives the user privs, realtime adds him to the realtime-privileges group which handles audio priorities
+  shell: /bin/bash
+  language: en_US.UTF-8
+  timezone: Africa/Johannesburg
+  dotfiles: 
+    git: # Url to git repo here that will be pulled to `dotfiles.location`
+    location: "/home/zvdm/.dotfiles"

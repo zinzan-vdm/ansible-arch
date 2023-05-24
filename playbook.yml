@@ -1,0 +1,38 @@
+---
+- hosts: localhost
+  connection: local
+  become: true
+
+  tasks:
+    # This role will install the packages needed for the system to function and configure some common setup such as boot and stuffs.
+    # It will also generate the kernel and the bootloader.
+    - name: '[LIVE] Core installation and config'
+      tags: [LIVE, '@00-core']
+      ansible.builtin.import_role:
+        name: 00-core
+
+    # This role will install and configure the necessary packages for my standard desktop setup
+    # (audio server, network manager, etc).
+    - name: '[LIVE] System installation and config'
+      tags: [LIVE, '@01-system']
+      ansible.builtin.import_role:
+        name: 01-system
+
+    # This role will install the display server and window manager, as well as some basic display stuffs.
+    # It will also start the basic systemd services.
+    - name: '[ROOT] Desktop configuration and services'
+      tags: [ROOT, '@02-desktop']
+      ansible.builtin.import_role:
+        name: 02-desktop
+
+    # This role will create and configure the user.
+    - name: '[ROOT] User setup'
+      tags: [ROOT, '@03-users']
+      ansible.builtin.import_role:
+        name: 03-users
+
+    # This role will install the software at the user level using flatpak and set up its configuration files.
+    - name: '[USER] User packages and config'
+      tags: [USER, '@04-homedir']
+      ansible.builtin.import_role:
+        name: 04-homedir

@@ -1,0 +1,50 @@
+---
+- name: gather the package facts
+  tags: '@01-system/aur'
+  ansible.builtin.package_facts:
+    manager: pacman
+
+- name: create builder user
+  tags: '@01-system/aur'
+  when: not system.aur_helper in ansible_facts.packages
+  ansible.builtin.user:
+    name: builder
+    state: present
+    create_home: true
+
+- name: set builder sudo permission
+  tags: '@01-system/aur'
+  when: not system.aur_helper in ansible_facts.packages
+  ansible.builtin.copy:
+    dest: /etc/sudoers.d/builder
+    content: "builder ALL=(ALL) NOPASSWD: /usr/bin/pacman"
+    force: true
+
+- name: clone helper
+  tags: '@01-system/aur'
+  become_user: builder
+  when: not system.aur_helper in ansible_facts.packages
+  ansible.builtin.git:
+    repo: "https://aur.archlinux.org/{{ system.aur_helper }}.git"
+    dest: "/home/builder/{{ system.aur_helper }}"
+    clone: true
+    update: true
+
+- name: build helper
+  tags: '@01-system/aur'
+  when: not system.aur_helper in ansible_facts.packages
+  shell: "cd /home/builder/{{ system.aur_helper }} && makepkg -si --noconfirm"
+  become_user: builder
+
+- name: remove builder user
+  tags: '@01-system/aur'
+  ansible.builtin.user:
+    name: builder
+    state: absent
+    remove: true
+
+- name: remove builder sudo permission
+  tags: '@01-system/aur'
+  ansible.builtin.file:
+    path: /etc/sudoers.d/builder
+    state: absent

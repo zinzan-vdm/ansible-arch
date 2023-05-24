@@ -1,0 +1,21 @@
+---
+- name: ensure locale exists
+  tags: '@00-core/locale'
+  loop: "{{ os.locale.languages }}"
+  community.general.locale_gen:
+    name: "{{ item }}"
+    state: present
+
+- name: set default locale
+  tags: '@00-core/locale'
+  ansible.builtin.copy:
+    content: "LANG={{ os.locale.languages[0] }}"
+    dest: /etc/locale.conf
+    force: true
+
+- name: set keymap
+  tags: '@00-core/locale'
+  ansible.builtin.copy:
+    content: "KEYMAP={{ os.locale.keymap }}"
+    dest: /etc/vconsole.conf
+    force: true

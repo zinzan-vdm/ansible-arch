@@ -1,0 +1,10 @@
+---
+- name: import desktop packages
+  tags: '@02-desktop/packages'
+  ansible.builtin.import_tasks:
+    file: packages.yml
+
+- name: import services
+  tags: '@02-desktop/services'
+  ansible.builtin.import_tasks:
+    file: services.yml

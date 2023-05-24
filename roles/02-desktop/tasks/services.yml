@@ -1,0 +1,8 @@
+---
+- name: enable systemd services
+  tags: '@02-desktop/services'
+  loop: "{{ desktop.services }}"
+  ansible.builtin.systemd:
+    name: "{{ item }}"
+    state: started
+    enabled: true

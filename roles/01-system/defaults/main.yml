@@ -1,0 +1,44 @@
+system:
+  aur_helper: yay-git
+  packages:
+  # Common Display Drivers
+  - xf86-video-ati
+  - xf86-video-intel
+  - xf86-video-nouveau
+  - xf86-video-vesa
+
+  # Trackpad
+  - xf86-input-synaptics
+
+  # Networking
+  - networkmanager
+  - wpa_supplicant
+  - broadcom-wl
+  - ifplugd
+
+  # Bluetooth
+  - bluez
+  - bluez-utils
+
+  # Media
+  - pipewire-alsa
+  - pipewire-jack
+  - pipewire-pulse
+  - wireplumber
+  - qjackctl
+
+  # Power Management
+  - power-profiles-daemon
+
+  # Flatpak
+  - flatpak
+  
+  # Reasonable Defaults
+  - realtime-privileges
+
+  # Other basics
+  - acpi
+  - sudo
+  - polkit
+  - git
+  - dosfstools

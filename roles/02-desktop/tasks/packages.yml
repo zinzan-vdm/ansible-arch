@@ -1,0 +1,24 @@
+---
+- name: update cache and upgrade
+  tags: '@02-desktop/packages'
+  community.general.pacman:
+    update_cache: true
+    upgrade: true
+
+- name: install desktop packages
+  tags: '@02-desktop/packages'
+  community.general.pacman:
+    name: "{{ desktop.packages }}"
+    state: present
+
+- name: install terminal packages
+  tags: '@02-desktop/packages'
+  community.general.pacman:
+    name: "{{ desktop.terminal.packages }}"
+    state: present
+
+- name: install fonts
+  tags: '@02-desktop/packages'
+  community.general.pacman:
+    name: "{{ desktop.font.packages }}"
+    state: present

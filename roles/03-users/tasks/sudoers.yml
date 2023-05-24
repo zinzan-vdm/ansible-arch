@@ -1,0 +1,7 @@
+---
+- name: set wheel group permissions
+  tags: '@03-users/sudo'
+  ansible.builtin.copy:
+    dest: "/etc/sudoers.d/wheel"
+    content: "%wheel ALL=(ALL:ALL) ALL"
+    force: true

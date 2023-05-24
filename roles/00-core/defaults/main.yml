@@ -1,0 +1,35 @@
+---
+os:
+  locale:
+    keymap: us
+    languages:
+    - en_US.UTF-8
+
+core:
+  packages:
+  # Base
+  - base
+  - base-devel
+  - "{{ kernel.name }}"
+  - "{{ kernel.name }}-headers"
+  - linux-firmware
+
+  # Compression
+  - zip
+  - unzip
+
+  # Editors
+  - vim
+
+  # Source Control
+  - git
+
+  # Http
+  - wget
+  - curl
+
+  # Docs
+  - man-db
+
+  # Helper
+  - neofetch

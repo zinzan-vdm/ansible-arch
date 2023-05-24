@@ -1,0 +1,15 @@
+---
+- name: import homedir packages
+  tags: '@04-homedir/packages'
+  ansible.builtin.import_tasks:
+    file: packages.yml
+
+- name: import flatpak
+  tags: '@04-homedir/flatpak'
+  ansible.builtin.import_tasks:
+    file: flatpak.yml
+
+- name: import dotfiles
+  tags: '@04-homedir/dotfiles'
+  ansible.builtin.import_tasks:
+    file: dotfiles.yml

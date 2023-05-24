@@ -1,0 +1,10 @@
+---
+- name: add user with systemd-homed
+  tags: '@03-users/user'
+  community.general.homectl:
+    name: "{{ user.name }}"
+    password: "{{ user.password }}"
+    memberof: "{{ user.groups }}"
+    shell: "{{ user.shell }}"
+    language: "{{ user.language }}"
+    timezone: "{{ user.timezone }}"

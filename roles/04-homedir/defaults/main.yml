@@ -1,0 +1,10 @@
+user:
+  dotfiles:
+    location: "/home/{{ user.name }}/.dotfiles"
+
+homedir:
+  packages:
+  # Dotfiles
+  - stow
+
+  flatpaks: []

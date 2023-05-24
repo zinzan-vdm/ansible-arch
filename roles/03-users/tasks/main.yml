@@ -1,0 +1,10 @@
+---
+- name: import user
+  tags: '@03-users/user'
+  ansible.builtin.import_tasks:
+    file: user.yml
+
+- name: Import sudoers
+  tags: '@03-users/sudo'
+  ansible.builtin.import_tasks:
+    file: sudoers.yml

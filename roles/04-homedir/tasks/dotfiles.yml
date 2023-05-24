@@ -1,0 +1,10 @@
+---
+- name: clone dotfiles
+  tags: '@04-homedir/dotfiles'
+  become_user: "{{ user.name }}"
+  when: user.dotfiles and user.dotfiles.git
+  ansible.builtin.git:
+    repo: "{{ user.dotfiles.git }}"
+    dest: "{{ user.dotfiles.location }}"
+    clone: true
+    update: true

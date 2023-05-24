@@ -1,0 +1,12 @@
+---
+- name: update cache and upgrade
+  tags: '@00-core/packages'
+  community.general.pacman:
+    update_cache: true
+    upgrade: true
+
+- name: install core packages
+  tags: '@00-core/packages'
+  community.general.pacman:
+    name: "{{ core.packages }}"
+    state: present

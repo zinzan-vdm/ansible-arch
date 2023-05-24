@@ -1,0 +1,10 @@
+---
+- name: import system packages
+  tags: '@01-system/packages'
+  ansible.builtin.import_tasks:
+    file: packages.yml
+
+- name: import aur
+  tags: '@01-system/aur'
+  ansible.builtin.import_tasks:
+    file: aur.yml
