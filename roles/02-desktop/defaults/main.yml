@@ -13,8 +13,6 @@ desktop:
 
   # Window Manager (Wayland + SwayWM)
   - hyprpaper
-  - wlogout
-  - swaylock-effects
   - qt5-wayland
   - qt6-wayland
 
@@ -37,6 +35,8 @@ desktop:
   - hyprland-git
   - xdg-desktop-portal-hyprland-git
   - waybar-hyprland-git
+  - wlogout
+  - swaylock-effects-git
 
   terminal:
     packages:
