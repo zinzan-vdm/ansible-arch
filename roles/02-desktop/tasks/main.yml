@@ -4,6 +4,11 @@
   ansible.builtin.import_tasks:
     file: packages.yml
 
+- name: import desktop aur packages
+  tags: '@02-desktop/aur'
+  ansible.builtin.import_tasks:
+    file: aur.yml
+
 - name: import services
   tags: '@02-desktop/services'
   ansible.builtin.import_tasks:

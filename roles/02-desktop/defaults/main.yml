@@ -4,35 +4,39 @@ desktop:
   - foot
 
   # Launcher
-  - wofi
+  - rofi
+  - rofi-emoji
 
   # Display Server
   - wayland
   - xorg-xwayland
 
   # Window Manager (Wayland + SwayWM)
-  - sway
-  - swaybg
-  - swayidle
-  - swaylock
-  - waybar
+  - hyprpaper
+  - wlogout
+  - swaylock-effects
+  - qt5-wayland
+  - qt6-wayland
 
   # Notifications
-  - mako
+  - dunst
 
   # Clipboard
   - wl-clipboard
 
-  # File management
-  - thunar
-
-  # Appearance
-  - papirus-icon-theme
+  # Screen Recording
+  - wf-recorder
 
   # XDG
   - xdg-utils
   - xdg-user-dirs
   - xdg-desktop-portal-wlr
+
+  aur:
+  # Window Manager (Wayland + Hyprland)
+  - hyprland-git
+  - xdg-desktop-portal-hyprland-git
+  - waybar-hyprland-git
 
   terminal:
     packages:

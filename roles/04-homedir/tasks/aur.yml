@@ -1,0 +1,4 @@
+- name: install homedir aur packages
+  tags: '@04-homedir/aur'
+  ansible.builtin.command: yay -Sy --noconfirm --needed --answerdiff=None "{{ item }}"
+  loop: "{{ homedir.aur }}"

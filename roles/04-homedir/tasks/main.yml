@@ -4,6 +4,11 @@
   ansible.builtin.import_tasks:
     file: packages.yml
 
+- name: import homedir aur packages
+  tags: '@04-homedir/aur'
+  ansible.builtin.import_tasks:
+    file: aur.yml
+
 - name: import flatpak
   tags: '@04-homedir/flatpak'
   ansible.builtin.import_tasks:

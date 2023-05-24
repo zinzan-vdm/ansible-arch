@@ -3,8 +3,6 @@ user:
     location: "/home/{{ user.name }}/.dotfiles"
 
 homedir:
-  packages:
-  # Dotfiles
-  - stow
-
+  packages: []
+  aur: []
   flatpaks: []
