@@ -11,7 +11,7 @@ desktop:
   - wayland
   - xorg-xwayland
 
-  # Window Manager (Wayland + SwayWM)
+  # Window Manager (Wayland + Hyprland)
   - hyprpaper
   - qt5-wayland
   - qt6-wayland
@@ -28,14 +28,14 @@ desktop:
   # XDG
   - xdg-utils
   - xdg-user-dirs
-  - xdg-desktop-portal-wlr
 
   aur:
   # Window Manager (Wayland + Hyprland)
   - hyprland-git
   - xdg-desktop-portal-hyprland-git
   - waybar-hyprland-git
-  - wlogout
+  # - wlogout # The version on the AUR has unverifiable PGP keys -> https://github.com/ArtsyMacaw/wlogout/issues/3
+  - wtype
   - swaylock-effects-git
 
   terminal:
