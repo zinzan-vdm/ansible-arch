@@ -7,6 +7,7 @@
 
 - name: install system packages
   tags: '@01-system/packages'
+  when: system.packages is defined and system.packages is iterable and system.packages|length > 0
   community.general.pacman:
     name: "{{ system.packages }}"
     state: present

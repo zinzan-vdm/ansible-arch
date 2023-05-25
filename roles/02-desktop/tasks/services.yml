@@ -1,6 +1,7 @@
 ---
 - name: enable systemd services
   tags: '@02-desktop/services'
+  when: desktop.services is defined and desktop.services is iterable and desktop.services|length > 0
   loop: "{{ desktop.services }}"
   ansible.builtin.systemd:
     name: "{{ item }}"

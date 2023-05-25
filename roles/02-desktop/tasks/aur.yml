@@ -1,4 +1,5 @@
 - name: install desktop aur packages
   tags: '@02-desktop/aur'
-  ansible.builtin.command: yay -Sy --noconfirm --needed --answerdiff=None "{{ item }}"
+  when: desktop.aur is defined and desktop.aur is iterable and desktop.aur|length > 0
   loop: "{{ desktop.aur }}"
+  ansible.builtin.command: yay -Sy --noconfirm --needed --answerdiff=None "{{ item }}"

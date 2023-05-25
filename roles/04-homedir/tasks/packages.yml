@@ -7,6 +7,7 @@
 
 - name: install homedir packages
   tags: '@04-homedir/packages'
+  when: homedir.packages is defined and homedir.packages is iterable and homedir.packages|length > 0
   community.general.pacman:
     name: "{{ homedir.packages }}"
     state: present

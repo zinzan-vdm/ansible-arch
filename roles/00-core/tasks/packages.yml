@@ -7,6 +7,7 @@
 
 - name: install core packages
   tags: '@00-core/packages'
+  when: core.packages is defined and core.packages is iterable and core.packages|length > 0
   community.general.pacman:
     name: "{{ core.packages }}"
     state: present

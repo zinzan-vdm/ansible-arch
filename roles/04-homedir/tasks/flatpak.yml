@@ -9,6 +9,7 @@
 
 - name: Install flatpak packages (user)
   become_user: "{{ user.name }}"
+  when: homedir.flatpaks is defined and homedir.flatpaks is iterable and homedir.flatpaks|length > 0
   community.general.flatpak:
     name: "{{ homedir.flatpaks }}"
     state: present

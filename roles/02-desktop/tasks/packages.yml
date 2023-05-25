@@ -7,18 +7,21 @@
 
 - name: install desktop packages
   tags: '@02-desktop/packages'
+  when: desktop.packages is defined and desktop.packages is iterable and desktop.packages|length > 0
   community.general.pacman:
     name: "{{ desktop.packages }}"
     state: present
 
 - name: install terminal packages
   tags: '@02-desktop/packages'
+  when: desktop.terminal.packages is defined and desktop.terminal.packages is iterable and desktop.terminal.packages|length > 0
   community.general.pacman:
     name: "{{ desktop.terminal.packages }}"
     state: present
 
 - name: install fonts
   tags: '@02-desktop/packages'
+  when: desktop.font.packages is defined and desktop.font.packages is iterable and desktop.font.packages|length > 0
   community.general.pacman:
     name: "{{ desktop.font.packages }}"
     state: present
