@@ -12,6 +12,7 @@ system:
 
   # Networking
   - networkmanager
+  - iw
   - wpa_supplicant
   - broadcom-wl
   - ifplugd
