@@ -19,6 +19,9 @@ desktop:
   # Notifications
   - dunst
 
+  # Sound
+  - pamixer
+
   # Clipboard
   - wl-clipboard
 
