@@ -4,8 +4,7 @@ desktop:
   - foot
 
   # Launcher
-  - rofi
-  - rofi-emoji
+  - wofi
 
   # Display Server
   - wayland
@@ -13,6 +12,7 @@ desktop:
 
   # Window Manager (Wayland + Hyprland)
   - hyprpaper
+  - swaylock
   - qt5-wayland
   - qt6-wayland
 
@@ -36,7 +36,11 @@ desktop:
   - waybar-hyprland-git
   # - wlogout # The version on the AUR has unverifiable PGP keys -> https://github.com/ArtsyMacaw/wlogout/issues/3
   - wtype
-  - swaylock-effects-gitq
+  - wlsunset
+  - swaylock-effects-git
+  
+  # Clipboard
+  - wl-clipboard-history
 
   terminal:
     packages:
