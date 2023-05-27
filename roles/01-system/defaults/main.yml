@@ -22,6 +22,7 @@ system:
   - bluez-utils
 
   # Media
+  - pipewire
   - pipewire-alsa
   - pipewire-jack
   - pipewire-pulse
