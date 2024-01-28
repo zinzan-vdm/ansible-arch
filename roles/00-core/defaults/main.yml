@@ -8,6 +8,7 @@ os:
 core:
   packages:
   # Base
+  - archlinux-keyring
   - base
   - base-devel
   - "{{ kernel.name }}"
