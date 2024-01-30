@@ -12,7 +12,7 @@ desktop:
 
   # Window Manager (Wayland + Hyprland)
   - hyprpaper
-  - swaylock
+  # - swaylock # clashes with swaylock-effects
   - qt5-wayland
   - qt6-wayland
 
@@ -31,11 +31,12 @@ desktop:
   # XDG
   - xdg-utils
   - xdg-user-dirs
+  - xdg-desktop-portal-hyprland
 
   aur:
   # Window Manager (Wayland + Hyprland)
   - hyprland-git
-  - xdg-desktop-portal-hyprland-git
+  #- xdg-desktop-portal-hyprland-git # Package is buggy af, using pacman instead of building from source
   - waybar-hyprland-git
   # - wlogout # The version on the AUR has unverifiable PGP keys -> https://github.com/ArtsyMacaw/wlogout/issues/3
   - wtype
